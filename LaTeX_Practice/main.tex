@@ -1,0 +1,84 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt,a4paper]{article}
+\usepackage{ctex}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs} % 三线表
+\usepackage{multirow} % 合并单元格
+\usepackage{xcolor}   % 颜色
+\usepackage{hyperref} % 链接
+
+\title{\LaTeX{} 基础排版综合练习}
+\author{你的名字}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{基础文本排版}
+熟悉不同的字体样式是 \LaTeX{} 的基本功。
+这里是 \textbf{粗体}，这里是 \textit{斜体}，这里是 \underline{下划线}。
+当你需要强调时，可以使用 \emph{强调文字}。
+文字颜色可以修改为 \textcolor{red}{红色} 或 \textcolor{blue}{蓝色}。
+
+换段落时，只需要在源代码中\textbf{空一行}即可。
+
+这是新的一段。如果要强制换行但是不换段，可以使用双反斜杠 \\
+这是由于双反斜杠造成的换行。
+
+\section{数学符号与公式}
+数学公式分为两种：
+\begin{itemize}
+    \item \textbf{行内公式：} 直接嵌在段落里，比如著名的欧拉公式 $e^{i\pi} + 1 = 0$。
+    \item \textbf{独立公式（行间公式）：} 会单独占一行并居中，通常带编号：
+\end{itemize}
+
+\begin{equation}
+    f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi)\,e^{2 \pi i \xi x} \,d\xi
+\end{equation}
+
+还有常用的多行对齐公式：
+\begin{align}
+    (x+y)^3 &= (x+y)(x^2 + 2xy + y^2) \nonumber \\ 
+            &= x^3 + 3x^2y + 3xy^2 + y^3
+\end{align}
+
+\section{列表项练习}
+这是有序列表的支持：
+\begin{enumerate}
+    \item 掌握文本排版
+    \item 掌握数学公式
+    \item 掌握插图和表格
+\end{enumerate}
+
+\section{表格排版}
+在学术论文中最常用的是“三线表”。可以使用 \texttt{booktabs} 宏包实现：
+
+\begin{table}[htbp]
+    \centering
+    \caption{常见的机器学习模型性能对比}
+    \label{tab:models}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{模型名称} & \textbf{准确率} & \textbf{召回率} & \textbf{F1 分数} \\
+        \midrule
+        逻辑回归 & 85.2\% & 83.4\% & 84.3\% \\
+        支持向量机 (SVM) & 88.7\% & 87.1\% & 87.9\% \\
+        随机森林 & 92.4\% & 90.8\% & 91.6\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{插入图片}
+\LaTeX{} 插入图片通常使用 \texttt{graphicx} 宏包。被注释掉的代码展示了插入图片的典型方法：
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.6\linewidth]{image_name.png} % 将此处的文件名替换为真实图片名
+%     \caption{这是一张插入的示例图片}
+%     \label{fig:example}
+% \end{figure}
+
+如图 \ref{tab:models} 所示（这里演示了交叉引用功能），你可以轻松引用文档中的表格或图片。
+
+\end{document}

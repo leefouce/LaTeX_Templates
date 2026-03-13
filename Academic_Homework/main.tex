@@ -1,0 +1,72 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Packages for theorem environments and custom frames
+\usepackage{amsthm}
+\usepackage{mdframed}
+
+% Customizing lists
+\usepackage{enumitem}
+
+% Custom Solution Environment
+\newenvironment{solution}{\begin{mdframed}[linewidth=1pt,linecolor=black]\noindent\textbf{Solution:}\par\vspace{0.2cm}}{\end{mdframed}\vspace{0.5cm}}
+
+% Header and Footer Setup
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\lhead{Course: Advanced Mathematics}
+\chead{Homework 1}
+\rhead{}
+
+\begin{document}
+
+\begin{center}
+    \LARGE \textbf{Week 1: Homework Assignment} \\[0.3cm]
+    \large \textbf{Name:} John Doe \quad \textbf{Student ID:} 123456789
+\end{center}
+\vspace{0.5cm}
+
+\section*{Problem 1}
+Please calculate the following indefinite integral:
+\begin{equation}
+    \int x \ln x \, dx
+\end{equation}
+
+\begin{solution}
+Using integration by parts. Let $u = \ln x$, $dv = x \, dx$.
+Then $du = \frac{1}{x} \, dx$, $v = \frac{1}{2}x^2$.
+
+According to the integration by parts formula $\int u \, dv = uv - \int v \, du$, we have:
+\begin{align*}
+    \int x \ln x \, dx &= \frac{1}{2}x^2 \ln x - \int \frac{1}{2}x^2 \cdot \frac{1}{x} \, dx \\
+    &= \frac{1}{2}x^2 \ln x - \frac{1}{2} \int x \, dx \\
+    &= \frac{1}{2}x^2 \ln x - \frac{1}{4}x^2 + C
+\end{align*}
+where $C$ is the constant of integration.
+\end{solution}
+
+\section*{Problem 2}
+Briefly explain the basic idea of Quick Sort and provide an analysis of its time complexity.
+
+\begin{solution}
+\textbf{Basic Idea:}
+Quick Sort is based on the Divide and Conquer strategy:
+\begin{enumerate}
+    \item \textbf{Select Pivot:} Pick an element from the array to act as the pivot.
+    \item \textbf{Partition:} Reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position.
+    \item \textbf{Recursion:} Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.
+\end{enumerate}
+
+\textbf{Time Complexity Analysis:}
+\begin{itemize}
+    \item \textbf{Best Case Time Complexity:} $\mathcal{O}(N \log N)$, occurs when the partition process always picks the middle element as pivot.
+    \item \textbf{Worst Case Time Complexity:} $\mathcal{O}(N^2)$, occurs when the partition process always picks greatest or smallest element as pivot (e.g., when the array is already sorted).
+    \item \textbf{Average Time Complexity:} $\mathcal{O}(N \log N)$.
+\end{itemize}
+\end{solution}
+
+\end{document}

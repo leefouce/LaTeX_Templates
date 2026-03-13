@@ -1,0 +1,224 @@
+% ============================================================
+%  COURSE ID – Course Title
+%  Assignment / Report Template
+% ============================================================
+\documentclass[12pt, a4paper]{article}
+
+% ── Encoding & fonts ────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+% ── Page layout ─────────────────────────────────────────────
+\usepackage[
+  top=2.5cm, bottom=2.5cm,
+  left=2.5cm, right=2.5cm
+]{geometry}
+
+% ── Mathematics ─────────────────────────────────────────────
+\usepackage{amsmath, amssymb, amsthm}
+
+% ── Graphics & tables ───────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% ── Code listings ───────────────────────────────────────────
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  backgroundcolor=\color{gray!10},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{green!50!black}\itshape,
+  stringstyle=\color{red!70!black},
+  numberstyle=\tiny\color{gray},
+  numbers=left,
+  breaklines=true,
+  frame=single,
+  captionpos=b,
+  showstringspaces=false
+}
+
+% ── Hyperlinks ──────────────────────────────────────────────
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+
+% ── Headers & footers ───────────────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{COURSE ID – Report 1}
+\lhead{University Name}
+\cfoot{\thepage}
+
+% ── Paragraph spacing ───────────────────────────────────────
+\usepackage{parskip}
+\setlength{\parskip}{6pt}
+
+% ── Caption formatting ──────────────────────────────────────
+\usepackage[font=small, labelfont=bf]{caption}
+
+% ── Bibliography ────────────────────────────────────────────
+\usepackage[numbers, sort&compress]{natbib}
+
+% ============================================================
+%  Title information  ← EDIT HERE
+% ============================================================
+\title{
+  \vspace{-1cm}
+  {\large University Name} \\[0.3cm]
+  {\LARGE \textbf{COURSE ID: Course Title}} \\[0.4cm]
+  {\Large Report 1} \\[3cm]
+  
+}
+
+\author{
+  \textbf{Student Name:} Your Full Name \\
+  \textbf{Student ID:}   XXXXXXXXX \\
+  \textbf{Email:}        yourname@university.edu
+}
+
+\date{Submission Date: \today}
+
+% ============================================================
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% ── Abstract ────────────────────────────────────────────────
+\begin{abstract}
+Write a concise summary (150–250 words) of your report here.
+Briefly describe the objectives, the methods used, the main
+results, and your conclusions.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+Introduce the topic and background of the assignment. State the
+objectives clearly. You may reference related work
+\cite{example2020} here.
+
+% ============================================================
+\section{Background \& Related Work}
+\label{sec:background}
+
+Discuss any relevant theory, prior work, or datasets used.
+
+% ============================================================
+\section{Methodology}
+\label{sec:method}
+
+Describe your approach, model architecture, or experimental
+setup.
+
+\subsection{Dataset}
+
+Describe the dataset used (size, preprocessing steps, etc.).
+
+\subsection{Model / Approach}
+
+Explain your model or algorithmic approach. You can include
+equations:
+
+\begin{equation}
+  \mathcal{L} = -\sum_{i=1}^{N} y_i \log(\hat{y}_i)
+  \label{eq:crossentropy}
+\end{equation}
+
+\subsection{Experimental Setup}
+
+Detail hyperparameters, hardware, training procedure, etc.
+
+% ============================================================
+\section{Results}
+\label{sec:results}
+
+Present your experimental results. Use tables and figures to
+support your analysis.
+
+\subsection{Quantitative Results}
+
+\begin{table}[H]
+  \centering
+  
+  \label{tab:results}
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Model} & \textbf{Accuracy} & \textbf{F1} & \textbf{Loss} \\
+    \midrule
+    Baseline        & 0.75              & 0.74        & 0.62          \\
+    Our Model       & \textbf{0.87}     & \textbf{0.86} & \textbf{0.41} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Comparison of model performance.}
+  \label{tab:results}
+\end{table}
+
+\subsection{Figures}
+
+% Uncomment and replace with your actual figure file:
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{figures/training_curve.png}
+%   \caption{Training and validation loss over epochs.}
+%   \label{fig:training}
+% \end{figure}
+
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+
+Analyse and interpret your results. Compare against baselines.
+Discuss limitations and potential improvements.
+
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+Summarise your findings and their significance. Suggest future
+directions for research.
+
+% ============================================================
+%  Code snippet example (optional)
+% ============================================================
+\appendix
+\section{Code Snippets}
+
+\begin{lstlisting}[language=Python, caption={Example training loop.}]
+for epoch in range(num_epochs):
+    model.train()
+    for batch in train_loader:
+        optimizer.zero_grad()
+        outputs = model(**batch)
+        loss = outputs.loss
+        loss.backward()
+        optimizer.step()
+    print(f"Epoch {epoch+1}, Loss: {loss.item():.4f}")
+\end{lstlisting}
+
+% ============================================================
+%  Bibliography
+% ============================================================
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% If you prefer inline references, use thebibliography:
+% \begin{thebibliography}{9}
+% \bibitem{example2020}
+%   Author, A.\ (2020).
+%   \textit{Title of the paper}.
+%   Journal Name, 10(2), 100--115.
+% \end{thebibliography}
+
+\end{document}

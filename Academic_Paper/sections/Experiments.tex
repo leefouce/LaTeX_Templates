@@ -1,0 +1,35 @@
+\section{Experiments}
+\label{sec:experiments}
+
+The experimental section validates the claims made in the introduction.
+
+\subsection{Datasets and Baselines}
+Specify the datasets used for evaluation. Detail the baseline models for fair comparison.
+
+\subsection{Results and Analysis}
+
+Results are typically summarized in tables. Table \ref{tab:results} demonstrates a standard formatting approach using \texttt{booktabs} for clean, professional rules without vertical lines.
+
+\begin{table}[H]
+    \centering
+    \caption{Performance comparison on standard benchmarks.}
+    \label{tab:results}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Method} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\
+        \midrule
+        Baseline A      & 0.782              & 0.810           & 0.795             \\
+        Baseline B      & 0.824              & 0.801           & 0.812             \\
+        \textbf{Ours}   & \textbf{0.891}     & \textbf{0.885}  & \textbf{0.888}    \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% \begin{figure}[t]
+%     \centering
+%     \includegraphics[width=\linewidth]{figures/arch.pdf}
+%     \caption{Overview of the proposed system architecture.}
+%     \label{fig:architecture}
+% \end{figure}
+
+Figures should be referenced in the text. For instance, see Figure \ref{fig:architecture} for the system overview (commented out in the source code).

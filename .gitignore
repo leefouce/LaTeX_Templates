@@ -1,0 +1,42 @@
+# TeX Auxiliary Files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.bcf
+*.fls
+*.fdb_latexmk
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.toc
+*.thm
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.vrb
+
+# Output Files
+# (Keep *.pdf commented if you want to commit PDFs to git, or uncomment to ignore them)
+# *.pdf
+# *.dvi
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editors
+.vscode/
+*.swp

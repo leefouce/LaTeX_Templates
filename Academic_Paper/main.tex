@@ -1,0 +1,97 @@
+%!TEX TS-program = xelatex
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+% ── Encoding & Fonts ────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{ctex} % Safe to keep for Chinese support using xelatex
+
+% ── Page Layout ─────────────────────────────────────────────
+\usepackage{geometry}
+\geometry{
+  top=0.75in,
+  bottom=1.0in,
+  left=0.625in,
+  right=0.625in,
+  columnsep=0.25in
+}
+
+% ── Author Affiliations ──────────────────────────────────────
+\usepackage{authblk}
+\renewcommand*{\Authfont}{\bfseries}
+
+% ── Mathematics ─────────────────────────────────────────────
+\usepackage{amsmath, amssymb, amsthm}
+
+% ── Graphics & Tables ───────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+
+% ── Hyperlinks ──────────────────────────────────────────────
+\usepackage[colorlinks=true, linkcolor=purple, citecolor=blue, urlcolor=blue]{hyperref}
+
+% ── Bibliography ────────────────────────────────────────────
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{unsrtnat}
+
+% ── Abstract Formatting ─────────────────────────────────────
+\renewenvironment{abstract}
+ {\small\bfseries
+  \begin{center}%
+    \bfseries \abstractname\vspace{-.5em}\vspace{0pt}%
+  \end{center}%
+  \quotation
+ }
+ {\endquotation}
+
+% ============================================================
+%  Title and Authors
+% ============================================================
+\title{\Large \textbf{A Comprehensive Standard Template for Academic Papers}}
+
+\author[1]{First Author\thanks{Corresponding author: first@university.edu}}
+\author[2]{Second Author}
+\author[1,2]{Third Author}
+
+\affil[1]{Department of Computer Science, University of Technology, City, Country}
+\affil[2]{Institute of Advanced Research, City, Country}
+
+\date{} % Leave empty for no date
+
+% ============================================================
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % Typically front page doesn't have page numbers
+\pagestyle{plain}    % Standard page numbering
+
+% ============================================================
+\begin{abstract}
+This document serves as a standard template for writing academic papers. It features a two-column layout, robust author affiliation formatting, and standard packages typically required for scientific typesetting. The abstract should clearly state the problem, the proposed methodology, the core experiments, and the primary conclusions. It must be concise, usually between 150 to 250 words, and should not contain citations or complex mathematical expressions.
+\end{abstract}
+
+{\small \textbf{\textit{Keywords---}} Academic Writing, LaTeX Template, Typesetting, Scientific Paper}
+
+% ============================================================
+% Sections
+% ============================================================
+\input{sections/Introduction}
+\input{sections/Related_Work}
+\input{sections/Methodology}
+\input{sections/Experiments}
+\input{sections/Conclusion}
+
+% ============================================================
+\section*{Acknowledgment}
+Optional section to thank individuals, grant agencies, or institutions that supported the research.
+
+% ============================================================
+% References
+% ============================================================
+\bibliography{references}
+
+\end{document}
